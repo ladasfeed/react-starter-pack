@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.testWrapper {
+    background: red;
+}
+
+.input:focus ~ .icon path {
+    stroke: #002BC2;
+    fill: #002BC2;
+}
+
+
+@media screen and (max-width: 1919px) {
+
+}
+
+
+@media screen and (max-width: 1439px) {
+
+}
+
+
+@media screen and (max-width: 1023px) {
+
+}
+
+
+@media screen and (max-width: 719px) {
+    .right {
+        left: inherit!important;
+        right: 0;
+    }
+}

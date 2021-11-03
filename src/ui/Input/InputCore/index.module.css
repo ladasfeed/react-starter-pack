@@ -1,0 +1,82 @@
+.wrapper {
+    --label-offset: -20px;
+    --input-height: 37px;
+    width: 100%;
+    max-width: 180px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper--lock {
+    pointer-events: none;
+}
+
+.input {
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    width: 100%;
+    padding: 10px 5px;
+}
+
+
+.label {
+
+}
+
+.support {
+    position: absolute;
+    right: 5px;
+    height: 24px;
+    border-radius: 10px;
+    background: white;
+    min-width: 24px;
+}
+
+.input::placeholder {
+    opacity: 0;
+}
+
+
+.label {
+    position: absolute;
+    left: 5px;
+    transition: .2s;
+    color: #688392;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    background: white;
+}
+.input:not(:placeholder-shown) + .label,
+.input:focus + .label,
+.input.filled + .label {
+    transform: translateY(var(--label-offset));
+    color: #16142B;
+    font-size: 12px;
+}
+
+
+
+.input:focus ~ .icon path {
+    stroke: #002BC2;
+}
+
+.wrapper-error {
+
+}
+
+.error {
+    position: absolute;
+    left: 8px;
+    font-weight: 300;
+    color: #F02840;
+    font-size: 12px;
+    bottom: 0px;
+}
+

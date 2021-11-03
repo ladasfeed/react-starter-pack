@@ -1,0 +1,132 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 13px 0 13px;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+.header_popup {
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+.arrow {
+    width: 15px;
+    height: 15px;
+}
+
+/* Стрелка, которая переключает месяц */
+.month_arrow {
+    width: 13px;
+    height: 13px;
+}
+
+.month_arrow path {
+    fill: #000000;
+}
+/* Стрелка назад для окрытого выбора месяца и года */
+.angle_arrow {
+    transform: rotateZ(180deg);
+    width: 13px;
+    height: 12px;
+}
+
+.angle_arrow path {
+    fill: #688392;
+}
+
+.month_year {
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.year {
+    margin-left: 14px;
+    cursor: pointer;
+}
+
+.month {
+    cursor: pointer;
+}
+
+.choice {
+    width: 100%;
+    height: calc(100% - 66px);
+    background-color: white;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    overflow-y: scroll;
+    z-index: 10;
+    padding-top: 8px;
+    border-radius: 0px 0px 16px 16px;
+
+    /* mozilla scrollbar */
+    scrollbar-color: #60ADF4 #ffffff;
+    scrollbar-width: thin;
+}
+.header_popup .choice {
+    top: 75px;
+}
+
+
+.choice::-webkit-scrollbar {
+    width: 3px;
+}
+
+.choice::-webkit-scrollbar-track {
+    margin-bottom: 10px;
+}
+
+.choice::-webkit-scrollbar-thumb {
+    background-color: #60ADF4;
+}
+
+
+.choice > p {
+    font-family: var(--font-Manrope);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.8px;
+    margin-bottom: 13px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.choice > .current_year {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    color: #002BC2;
+}
+
+.next_month_button {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@media screen and (max-width: 1919px) {
+
+}
+
+
+@media screen and (max-width: 1439px) {
+
+}
+
+
+@media screen and (max-width: 1023px) {
+
+}
+
+
+@media screen and (max-width: 719px) {
+
+}
