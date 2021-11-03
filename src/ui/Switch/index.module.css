@@ -1,0 +1,32 @@
+.container {
+
+}
+
+.input {
+    display: none;
+}
+
+.input:checked + .switch_container {
+    background: aquamarine;
+}
+.input:checked + .switch_container > .switch_circle {
+    transform: translateX(calc(100% + 4px));
+    background: #005570;
+}
+
+.switch_container {
+    cursor: pointer;
+    width: 50px;
+    padding: 2px;
+    border-radius: 20px;
+    background: #D2D6E1;
+    transition: .3s;
+}
+
+.switch_circle {
+    width: 21px;
+    transition: .3s;
+    height: 21px;
+    border-radius: 50%;
+    background: #002BC2;
+}

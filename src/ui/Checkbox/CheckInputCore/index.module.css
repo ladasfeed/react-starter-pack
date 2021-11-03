@@ -1,0 +1,64 @@
+.input_custom {
+
+}
+
+
+.custom {
+    padding: 10px;
+    border-radius: 20px;
+    transition: .3s;
+    color: white;
+}
+.input_custom + .custom {
+    background: #61dafb;
+}
+.input_custom:checked + .custom {
+    background: #01cd8f;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox_input {
+    display: none;
+}
+
+.label {
+    margin-left: 10px;
+}
+
+.icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checked_icon,
+.unchecked_icon {
+    transition: .2s;
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox_input:not(:checked) + .icon > .unchecked_icon {
+    opacity: 1;
+}
+
+.checkbox_input:checked + .icon > .checked_icon {
+    opacity: 1;
+}
+
+.group {
+    display: flex;
+    margin-top: 20px;
+}
+.group .container {
+    margin-right: 10px;
+}

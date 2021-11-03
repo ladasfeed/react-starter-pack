@@ -27,7 +27,7 @@ type InputConstructorType = {
     };
   };
   icons: {
-    lock?: FC<any>;
+    lock: FC<any>;
     eyeClosed: FC<any>;
     edit: FC<any>;
   };
@@ -142,6 +142,15 @@ export function InputTextBuilder(builderProps: InputConstructorType) {
 
   return {
     Default: Input,
+    Lock: (props: TextInputPropsType) => {
+      return (
+        <Input
+          {...props}
+          disabled
+          support={React.createElement(builderProps.icons.lock, {})}
+        />
+      );
+    },
     Password: (props: TextInputPropsType) => {
       const [isOpen, setIsOpen] = useState(false);
       const icon = icons.eyeClosed;

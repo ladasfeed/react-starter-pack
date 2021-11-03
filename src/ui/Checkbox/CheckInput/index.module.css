@@ -1,0 +1,12 @@
+.custom {
+    padding: 10px;
+    border-radius: 20px;
+    transition: .3s;
+    color: white;
+}
+.input_custom + .custom {
+    background: #61dafb;
+}
+.input_custom:checked + .custom {
+    background: #01cd8f;
+}
