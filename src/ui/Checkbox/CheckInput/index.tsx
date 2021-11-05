@@ -7,11 +7,11 @@ import React from "react";
 import { CheckboxCreator } from "ui/Checkbox/CheckInputCore";
 
 export const CheckInput = CheckboxCreator({
-  customElement: {
-    component: (props: { text: string }) => {
-      return <div className={styles.custom}>{props.text}</div>;
-    },
-  },
+  // customElement: {
+  //   component: (props: { text: string }) => {
+  //     return <div className={styles.custom}>{props.text}</div>;
+  //   },
+  // },
   classNames: {
     input: styles.input_custom,
   },

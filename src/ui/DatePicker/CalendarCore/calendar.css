@@ -6,7 +6,7 @@
 
 .react-datepicker-popper {
     width: 288px;
-    transform: translate3d(0px, 42px, 0px) !important;
+    /*transform: translate3d(0px, 42px, 0px) !important;*/
     z-index: 5 !important;
 }
 

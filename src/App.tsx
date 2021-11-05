@@ -1,64 +1,48 @@
 import React from "react";
 import "./App.css";
-import { InputText } from "ui/Input/InputText";
 import { useForm } from "react-hook-form";
+import { useMedia } from "services/Media";
+import { Schema } from "helpers/builders/yup";
+import { InputTest, InputText } from "ui/Input/InputText";
 import { Calendar } from "ui/DatePicker";
-import { Switch } from "ui/Switch";
-import { CheckInput } from "ui/Checkbox/CheckInput";
+import { InputTextBuilder } from "react-starter-pack";
+
+const Test = () => {
+  const { width } = useMedia();
+  console.log("Test rer");
+  return (
+    <div
+      style={{
+        fontSize: 30,
+      }}
+    >
+      {width}
+    </div>
+  );
+};
 
 function App() {
-  const form = useForm();
+  const form = useForm({
+    resolver: Schema.resolver(
+      Schema.create({
+        email: Schema.schemas.password(),
+      })
+    ),
+  });
+
+  console.log(form.formState.errors);
   return (
     <div className="App">
-      <Calendar placeholder="Blob" control={form.control} name="date" />
-      <InputText.Default
-        placeholder="Blob"
-        control={form.control}
-        name="default"
-      />
-      <InputText.Editable
-        placeholder="Blob"
-        control={form.control}
-        name="editable"
-      />
-      <InputText.Password
-        placeholder="Blob"
-        control={form.control}
-        name="password"
-      />
-      <InputText.Numeric
-        placeholder="Blob"
-        control={form.control}
-        name="password"
-      />
-      <InputText.Lock placeholder="Blob" control={form.control} name="lock" />
-      <CheckInput.default
-        inputType={"checkbox"}
-        customPayload={{ text: "Blues" }}
-        label={"Чекай мать"}
-        control={form.control}
-        name={"check"}
-      />
-      <CheckInput.group
-        inputType="radio"
-        control={form.control}
-        name={"chgr"}
-        options={[
-          {
-            value: "12",
-            customPayload: {
-              text: "ESN",
-            },
-          },
-          {
-            value: "1232",
-            customPayload: {
-              text: "USN",
-            },
-          },
-        ]}
-      />
-      <Switch.default control={form.control} name={"switch"} />
+      <form onSubmit={form.handleSubmit(() => null)}>
+        <InputTest.Default
+          control={form.control}
+          name={"email"}
+          error={form.formState?.errors?.email?.message}
+        />
+        <Calendar name={"date"} control={form.control} />
+        <button>Fuck</button>
+      </form>
+      {/*<Test />*/}
     </div>
   );
 }

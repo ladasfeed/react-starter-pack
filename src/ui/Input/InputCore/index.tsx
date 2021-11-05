@@ -1,15 +1,8 @@
-import React, {
-  AllHTMLAttributes,
-  FC,
-  ReactNode,
-  useEffect,
-  useState,
-} from "react";
+import React, { AllHTMLAttributes, FC, ReactNode, useState } from "react";
 import styles from "ui/Input/InputCore/index.module.css";
 import { Control, Controller } from "react-hook-form";
-import ReactInputMask from "react-input-mask";
 import cn from "classnames";
-import NumberFormat from "react-number-format";
+import NumberFormat, { NumberFormatProps } from "react-number-format";
 
 type InputConstructorType = {
   classNames?: {
@@ -105,37 +98,29 @@ const InputWrapper: FC<{
 
 export function InputTextBuilder(builderProps: InputConstructorType) {
   const { classNames, icons } = builderProps;
-  const Input = function InputText(props: TextInputPropsType) {
+  const Input = function InputText(inputProps: TextInputPropsType) {
+    const { control, name, ...jsxAttr } = inputProps;
+    const fieldProps = control.register(name);
     return (
-      <InputWrapper builderProps={builderProps} inputProps={props}>
-        <Controller
-          control={props.control}
-          name={props.name}
-          defaultValue={props.defaultValue}
-          render={({ field }) => (
-            <ReactInputMask
-              data-class="input"
-              autoComplete="off"
-              //@ts-ignore
-              maskChar={null}
-              mask={props.mask || ""}
-              {...props}
-              {...field}
-              className={cn(styles.input, classNames?.elements?.input, {
-                [styles.input_readonly]: props.readOnly,
-              })}
-              inputRef={field.ref}
-              readOnly={props.readOnly}
-              onChange={(e) => {
-                field.onChange(e);
-                if (props.onChange) {
-                  props.onChange(e);
-                }
-              }}
-            />
-          )}
+      <InputWrapper builderProps={builderProps} inputProps={inputProps}>
+        <input
+          data-class="input"
+          {...fieldProps}
+          {...jsxAttr}
+          className={cn(styles.input, classNames?.elements?.input, {
+            [styles.input_readonly]: jsxAttr.readOnly,
+          })}
+          onChange={(e) => {
+            fieldProps.onChange(e);
+            if (jsxAttr.onChange) {
+              jsxAttr.onChange(e);
+            }
+          }}
         />
-        <InputSupports componentProps={props} builderProps={builderProps} />
+        <InputSupports
+          componentProps={inputProps}
+          builderProps={builderProps}
+        />
       </InputWrapper>
     );
   };
@@ -185,15 +170,18 @@ export function InputTextBuilder(builderProps: InputConstructorType) {
     CalendarInput: (props: any) => {
       return (
         <InputWrapper builderProps={builderProps} inputProps={props}>
-          <ReactInputMask
+          <NumberFormat
+            {...props}
+            placeholder={"0"}
             className={cn(styles.input, classNames?.elements?.input)}
-            mask={"99.99.9999"}
+            mask={"_"}
+            format={"##.##.####"}
           />
           <InputSupports componentProps={props} builderProps={builderProps} />
         </InputWrapper>
       );
     },
-    Numeric: (props: TextInputPropsType) => {
+    Numeric: (props: NumberFormatProps & TextInputPropsType) => {
       return (
         <InputWrapper builderProps={builderProps} inputProps={props}>
           <Controller
@@ -206,6 +194,8 @@ export function InputTextBuilder(builderProps: InputConstructorType) {
                 className={cn(styles.input, classNames?.elements?.input)}
                 allowNegative={false}
                 thousandSeparator={" "}
+                mask={props.mask}
+                format={props.format}
               />
             )}
           />

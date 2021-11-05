@@ -20,3 +20,18 @@ export const InputText = InputTextBuilder({
     edit: EditIcon,
   },
 });
+
+export const InputTest = InputTextBuilder({
+  classNames: {
+    elements: {
+      input: styles.input,
+      wrapper: styles.wrapper,
+      label: styles.label,
+    },
+  },
+  icons: {
+    lock: Lock,
+    eyeClosed: EyeClosed,
+    edit: EditIcon,
+  },
+});
