@@ -21,6 +21,7 @@ const MediaContextCalculations: FC<{
   });
 
   useEffect(() => {
+    setValue(width);
     const setWidthHandler = () => {
       setWidth(window.innerWidth);
     };
@@ -28,9 +29,6 @@ const MediaContextCalculations: FC<{
     return () => {
       window.removeEventListener("resize", setWidthHandler);
     };
-  }, [width]);
-  useEffect(() => {
-    setValue(width);
   }, [width]);
 
   return null;

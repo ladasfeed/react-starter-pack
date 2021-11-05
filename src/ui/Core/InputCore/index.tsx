@@ -1,5 +1,5 @@
 import React, { AllHTMLAttributes, FC, ReactNode, useState } from "react";
-import styles from "ui/Input/InputCore/index.module.css";
+import styles from "ui/Core/InputCore/index.module.css";
 import { Control, Controller } from "react-hook-form";
 import cn from "classnames";
 import NumberFormat, { NumberFormatProps } from "react-number-format";

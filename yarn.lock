@@ -9330,10 +9330,10 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react-starter-pack@^0.0.4":
-  "integrity" "sha512-zkHEL8O9UGleGgAYZwB4fSUlzCmTSmZetk18dCgGIQM/X8nAbI/3heNRAfh/0zE+NXNp8NDAoZ9hwIiYG699Jw=="
-  "resolved" "https://registry.npmjs.org/react-starter-pack/-/react-starter-pack-0.0.4.tgz"
-  "version" "0.0.4"
+"react-starter-pack@^0.0.7":
+  "integrity" "sha512-KuDsav/f5jZVm1hukwKMgMYs3cLpY+JXqZ5UnIT3Rs+vU4cInGKjefXDNyavXTZi2dpWGaHEbWz369OJfDckSQ=="
+  "resolved" "https://registry.npmjs.org/react-starter-pack/-/react-starter-pack-0.0.7.tgz"
+  "version" "0.0.7"
 
 "react@*", "react@^0.14 || ^15.0.0-0 || ^16.0.0-0 || ^17.0.0-0", "react@^15.5.x || ^16.x || ^17.x", "react@^16.8.0 || ^17", "react@^16.9.0 || ^17", "react@^17.0.2", "react@>= 16", "react@>=16.13.1", "react@>=16.8", "react@>=16.8 || ^17.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="

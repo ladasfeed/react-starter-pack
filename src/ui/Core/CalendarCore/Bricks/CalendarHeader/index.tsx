@@ -1,10 +1,10 @@
 import React, { FC, useState } from "react";
-import styles from "ui/DatePicker/CalendarCore/Bricks/CalendarHeader/style.module.css";
+import styles from "ui/Core/CalendarCore/Bricks/CalendarHeader/style.module.css";
 import cn from "classnames";
-import { months } from "ui/DatePicker/CalendarCore/helpers";
+import { months } from "ui/Core/CalendarCore/helpers";
 import { motion } from "framer-motion";
-import { ReactComponent as Icon } from "../../calendar.svg";
-import { calendarAnimation } from "ui/DatePicker/CalendarCore/animations";
+import { ReactComponent as Icon } from "ui/Core/CalendarCore/calendar.svg";
+import { calendarAnimation } from "ui/Core/CalendarCore/animations";
 import { format, getYear } from "date-fns";
 
 type propsType = {

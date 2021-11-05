@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import styles from "./index.module.css";
-import { InputTextBuilder } from "ui/Input/InputCore";
+import { InputTextBuilder } from "react-starter-pack";
 import { ReactComponent as EditIcon } from "ui/Input/assets/Edit.svg";
 import { ReactComponent as EyeClosed } from "ui/Input/assets/EyeClosed.svg";
 import { ReactComponent as Lock } from "ui/Input/assets/Lock.svg";

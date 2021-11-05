@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 import { useForm } from "react-hook-form";
 import { useMedia } from "services/Media";
 import { Schema } from "helpers/builders/yup";
 import { InputTest, InputText } from "ui/Input/InputText";
 import { Calendar } from "ui/DatePicker";
-import { InputTextBuilder } from "react-starter-pack";
+import { InputTextBuilder, RSPHooks } from "react-starter-pack";
 
 const Test = () => {
   const { width } = useMedia();
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [isOpen, setIsOpen] = RSPHooks.useToggle(false);
+
+  RSPHooks.useBlurred(ref, setIsOpen, isOpen);
+  useEffect(() => {}, []);
   console.log("Test rer");
   return (
     <div

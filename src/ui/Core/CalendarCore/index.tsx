@@ -2,15 +2,12 @@ import React, { FC, useEffect, useState } from "react";
 import { Control, Controller } from "react-hook-form";
 import cn from "classnames";
 import DatePicker from "react-datepicker";
-import styles from "./style.module.css";
+import styles from "ui/Core/CalendarCore/style.module.css";
 import "react-datepicker/dist/react-datepicker.css";
-import "./calendar.css";
-import { CalendarHeader } from "ui/DatePicker/CalendarCore/Bricks/CalendarHeader";
-import {
-  formatWeekDay,
-  renderDayContents,
-} from "ui/DatePicker/CalendarCore/helpers";
-import { ReactComponent as CalendarIcon } from "./calendar.svg";
+import "ui/Core/CalendarCore/calendar.css";
+import { CalendarHeader } from "ui/Core/CalendarCore/Bricks/CalendarHeader";
+import { formatWeekDay, renderDayContents } from "ui/Core/CalendarCore/helpers";
+import { ReactComponent as CalendarIcon } from "ui/Core/CalendarCore/calendar.svg";
 
 type propsType = {
   control: Control<any>;

@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes } from "react";
-import styles from "ui/Checkbox/CheckInputCore/index.module.css";
-import { createComponent } from "ui/ErrorFallback";
+import styles from "ui/Core/CheckInputCore/index.module.css";
+import { createComponent } from "ui/Core/ErrorFallback";
 import { Control } from "react-hook-form";
 import cn from "classnames";
 
@@ -19,30 +19,30 @@ type CheckboxCreatorType<T> = {
     };
   };
   customElement?: {
-    // Нужно будет описать правило .input:checked ~ .component {}
     component: FC<T>;
   };
 };
 
-type CheckBoxType<T> = {
+type CheckBoxBaseType = {
   control: Control<any>;
-  label?: string;
-  name: string;
-  customPayload?: T;
   inputType: "checkbox" | "radio";
-} & HTMLAttributes<HTMLInputElement>;
+  name: string;
+};
+
+type CheckBoxType<T> = {
+  label?: string;
+  customPayload?: T;
+} & HTMLAttributes<HTMLInputElement> &
+  CheckBoxBaseType;
 
 type CheckBoxGroupType<T> = {
-  control: Control<any>;
-  inputType: "checkbox" | "radio";
-  name: string;
   options: Array<{
     value: string;
     customPayload?: T;
   }>;
-};
+} & CheckBoxBaseType;
 
-export function CheckboxCreator<T>(constructor: CheckboxCreatorType<T>) {
+export function CheckInputCreator<T>(constructor: CheckboxCreatorType<T>) {
   const CheckBox = createComponent("Checkbox", (props: CheckBoxType<T>) => {
     return (
       <label className={cn(styles.container, props.className)}>

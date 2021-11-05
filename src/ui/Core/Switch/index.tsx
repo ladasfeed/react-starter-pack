@@ -1,6 +1,6 @@
 import React, { FC, HTMLAttributes, useEffect, useState } from "react";
-import styles from "./index.module.css";
-import { createComponent } from "ui/ErrorFallback";
+import styles from "ui/Core/Switch/index.module.css";
+import { createComponent } from "ui/Core/ErrorFallback";
 import { Control } from "react-hook-form";
 
 type SwitchBuilderType = {
@@ -15,7 +15,7 @@ type propsType = {
   control: Control<any>;
 } & HTMLAttributes<HTMLDivElement>;
 
-export const SwitchBuilder = () => {
+export const SwitchBuilder = (builderProps: SwitchBuilderType) => {
   const Switch = createComponent("Switch", (props: propsType) => {
     return (
       <label className={styles.container}>
@@ -35,5 +35,3 @@ export const SwitchBuilder = () => {
     default: Switch,
   };
 };
-
-export const Switch = SwitchBuilder();

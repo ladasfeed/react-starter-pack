@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import styles from "./index.module.css";
+import styles from "ui/Core/ErrorFallback/index.module.css";
 import { withErrorBoundary } from "react-error-boundary";
 
 const ErrorFallback: FC<any> = ({ error, resetErrorBoundary }: any) => {

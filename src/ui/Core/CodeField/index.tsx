@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import cn from "classnames";
-import styles from "./index.module.css";
+import styles from "ui/Core/CodeField/index.module.css";
 import { Control, UseFormSetValue } from "react-hook-form";
-import { useCodeFieldLogic } from "ui/CodeField/useCodeFieldLogic";
+import { useCodeFieldLogic } from "ui/Core/CodeField/useCodeFieldLogic";
 var timeoutId = 0;
 
 export type propsType = {
